@@ -8,11 +8,26 @@ body {
 
 .container {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 300px); */
-    grid-template: repeat(3, 300px)/repeat(3, 1fr);
-    /* grid-column-gap: 20px;
-    grid-row-gap: 40px; */
-    grid-gap: 30px 25px;
+    /* grid-template-columns: [a] 1fr [b] 1fr [c] 1fr [a d] 1fr [e] 1fr [c f]; */
+    /* grid-template-columns: [a-start b-start] 1fr [a-end] 1fr [b-end] 1fr [c-start] 1fr 1fr [c-end];
+    grid-template-rows: [a-start] 100px [a-end c-start] 100px [b-start] 100px [b-end c-end]; */
+    grid-template: 
+        'a . . . .' 100px
+        '. . . c c' 100px
+        'b b . c c' 100px
+        / 1fr 1fr 1fr 1fr 1fr;
     border: 2px solid;
+}
+
+.item:nth-child(1) {
+    grid-area: a-start/a-start/a-end/a-end;
+}
+
+.item:nth-child(2) {
+    grid-area: b-start/b-start/b-end/c-start;
+}
+
+.item:nth-child(3) {
+    grid-area: c-start/c-start/c-end/c-end;
+
 }
