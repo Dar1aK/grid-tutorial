@@ -7,34 +7,12 @@ body {
 }
 
 .container {
-    height: 500px;
     display: grid;
-    grid-template: 
-        'a . . . .' 100px
-        '. . . c c' 100px
-        'b b . c c' 100px
-        / 100px 100px 100px 100px 100px;
-    /* justify-content: space-around;
-    align-content: space-around; */
-    place-content: space-around end; /*выравнивание полос сетки относительно контейнера*/
-    /* justify-items: center; 
-    align-items: center; */ /*выравнивание содержимого внутри области*/
-    /* place-items: start end; */
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px); */
+    grid-template: repeat(3, 300px)/repeat(3, 1fr);
+    /* grid-column-gap: 20px;
+    grid-row-gap: 40px; */
+    grid-gap: 30px 25px;
     border: 2px solid;
-}
-
-.item:nth-child(1) {
-    grid-area: a;
-}
-
-.item:nth-child(2) {
-    grid-area: b;
-}
-
-.item:nth-child(3) {
-    grid-area: c;
-    /* justify-self: center; 
-    align-self: center; */
-    place-self: start end; /*выравнивание содержимого для одного элемента*/
-    
 }
